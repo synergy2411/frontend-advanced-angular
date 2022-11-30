@@ -201,47 +201,96 @@ let foo: User = {
 // - declare the methods
 // - full abstraction
 
-interface Resource {
-    id: number;
-    status: string;
-    changeOil(): string;
+// interface Resource {
+//     id: number;
+//     status: string;
+//     changeOil(): string;
+// }
+
+// class Server implements Resource {
+//     id: number;
+//     status: string;
+//     constructor(serverId: number, serverStatus: string) {
+//         this.id = serverId;
+//         this.status = serverStatus;
+//     }
+//     changeOil(): string {
+//         return "Changing the oil..."
+//     }
+// }
+
+// let serverA: Resource = new Server(1001, "running");
+// console.log(serverA.changeOil())
+
+// // ABSTRACT CLASSES
+// abstract class Person {
+//     private name: string;
+//     constructor(name: string) {
+//         this.name = name;
+//     }
+//     display(): void {
+//         console.log("Name : ", this.name)
+//     }
+
+//     abstract find(name: string): string;
+// }
+
+// class Employee extends Person {
+//     constructor(empName: string) {
+//         super(empName)
+//     }
+//     find(name: string): string {
+//         return "Finding the person"
+//     }
+// }
+// let userA: Person = new Employee("USER-A")
+// userA.display()
+
+
+
+
+
+
+// GENERICS
+
+// Built-in Generic
+// let numbers : Array<number> = [12,3,4,6,2];
+
+
+// Custom Generic
+function addAtBeginning<T>(val: T, arr: Array<T>): Array<T> {
+    return [val, ...arr]
 }
 
-class Server implements Resource {
-    id: number;
-    status: string;
-    constructor(serverId: number, serverStatus: string) {
-        this.id = serverId;
-        this.status = serverStatus;
-    }
-    changeOil(): string {
-        return "Changing the oil..."
-    }
+const numArr = addAtBeginning<number>(201, [202, 203, 204])
+
+const strArr = addAtBeginning<string>("Hello", ["How", "are", "you", "?"])
+
+const objArr = addAtBeginning<{ name: string, age: number }>(
+    { name: "Sumit K", age: 32 },
+    [{ name: "Tanvi", age: 23 }, { name: "Ragamayi", age: 23 }]
+)
+
+console.log(objArr);
+
+// const numArr = addAtBeginning(101, [102, 103, 104, 105])
+
+// numArr[0].
+
+// function strAddAtBeginning(val : string, arr :Array<string>) : Array<string> {
+//     return [val, ...arr]
+// }
+
+// const newStrArray  = strAddAtBeginning("Hello", ["How", "are", "you", "?"])
+
+// newStrArray[1].
+
+
+interface Resource<T, U> {
+    id: T,
+    status: U
 }
 
-let serverA: Resource = new Server(1001, "running");
-console.log(serverA.changeOil())
+let server: Resource<number, boolean> = { id: 201, status: true }
 
-// ABSTRACT CLASSES
-abstract class Person {
-    private name: string;
-    constructor(name: string) {
-        this.name = name;
-    }
-    display(): void {
-        console.log("Name : ", this.name)
-    }
-
-    abstract find(name: string): string;
-}
-
-class Employee extends Person {
-    constructor(empName: string) {
-        super(empName)
-    }
-    find(name: string): string {
-        return "Finding the person"
-    }
-}
-let userA: Person = new Employee("USER-A")
-userA.display()
+let server2: Resource<string, number> = { id: "R001", status: 1 }
