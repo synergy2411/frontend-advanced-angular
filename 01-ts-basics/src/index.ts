@@ -126,7 +126,7 @@ let foo: User = {
 
 
 
-// STATIC : 
+// STATIC :
 // - static members can only be called via class name
 // - static members holds their value for each class instance/object
 
@@ -258,20 +258,20 @@ let foo: User = {
 
 
 // Custom Generic
-function addAtBeginning<T>(val: T, arr: Array<T>): Array<T> {
-    return [val, ...arr]
-}
+// function addAtBeginning<T>(val: T, arr: Array<T>): Array<T> {
+//     return [val, ...arr]
+// }
 
-const numArr = addAtBeginning<number>(201, [202, 203, 204])
+// const numArr = addAtBeginning<number>(201, [202, 203, 204])
 
-const strArr = addAtBeginning<string>("Hello", ["How", "are", "you", "?"])
+// const strArr = addAtBeginning<string>("Hello", ["How", "are", "you", "?"])
 
-const objArr = addAtBeginning<{ name: string, age: number }>(
-    { name: "Sumit K", age: 32 },
-    [{ name: "Tanvi", age: 23 }, { name: "Ragamayi", age: 23 }]
-)
+// const objArr = addAtBeginning<{ name: string, age: number }>(
+//     { name: "Sumit K", age: 32 },
+//     [{ name: "Tanvi", age: 23 }, { name: "Ragamayi", age: 23 }]
+// )
 
-console.log(objArr);
+// console.log(objArr);
 
 // const numArr = addAtBeginning(101, [102, 103, 104, 105])
 
@@ -286,11 +286,46 @@ console.log(objArr);
 // newStrArray[1].
 
 
-interface Resource<T, U> {
-    id: T,
-    status: U
-}
+// interface Resource<T, U> {
+//     id: T,
+//     status: U
+// }
 
-let server: Resource<number, boolean> = { id: 201, status: true }
+// let server: Resource<number, boolean> = { id: 201, status: true }
 
-let server2: Resource<string, number> = { id: "R001", status: 1 }
+// let server2: Resource<string, number> = { id: "R001", status: 1 }
+
+
+
+// class Animal<T> {
+
+//     species: string;
+//     legs: T
+
+//     constructor(species: string, legs: T) {
+//         this.species = species;
+//         this.legs = legs;
+//     }
+
+//     getDetails() {
+//         return `${this.species} has ${this.legs} legs`;
+//     }
+// }
+
+// let bunny = new Animal<number>("Rabbit", 4);
+// console.log(bunny.getDetails())
+
+// let kitty = new Animal<string>("Tiger", "four");
+// console.log(kitty.getDetails());
+
+
+
+
+import { MAGIC_NUMBER } from './utils';     // << Named import
+import XYZ from './utils';     // << Default import
+
+let xyz: string = "Hello World"
+
+console.log("MAGIC NUMBER : ", MAGIC_NUMBER);
+
+XYZ()

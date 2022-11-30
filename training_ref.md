@@ -37,3 +37,38 @@
 - Change the script in package.json
   > "compile" : "tsc --watch"
 - npm run compile
+
+# Decorators - simple function, prefixed with '@', meta-programming
+
+- Classes : @NgModule, @Component, @Directive,....
+- Methods : @HostListener()
+- Properties : @Input(), @Output(), @HostBinding()
+- Parameters : @Optional(), @Inject()
+
+# Angular - 5 building blocks
+
+- Module : ES6 Classes + @NgModule({ })
+- Component : ES6 Classes + @Component( { } )
+- Directive : ES6 Classes + @Directive({ })
+- Services : ES6 Classes + @Injectable({ })
+- Pipe : ES6 Classes + @Pipe({ })
+
+@NgModule({ })
+class RootModule{
+@Input()
+user : string;
+@HostListener()
+onmouseleave( @Optional() name : string){}
+}
+
+# Module Systems
+
+- CommonJS Module System - Default for NODEJS
+- require()
+- module.exports
+
+- ES Module - Default for Browser
+- import
+- export
+
+ <script src="" type="module">
