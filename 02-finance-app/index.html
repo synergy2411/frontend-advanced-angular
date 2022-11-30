@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finance App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
+      integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="container">
+    <div class="row">
+      <div class="col-6 offset-3">
+        <div class="card">
+          <div class="card-header">
+            <h1 class="text-center">The Finance App</h1>
+          </div>
+          <div class="card-body">
+            <form>
+              <!-- title -->
+              <div class="form-group">
+                <label for="title">Title : </label>
+                <input type="text" id="txtTitle" class="form-control" />
+              </div>
+              <!-- type : select box > 1. Payment | 2. Invoice -->
+              <!-- amount -->
+              <br />
+              <div class="d-grid">
+                <button class="btn btn-primary" id="btnAdd">Add</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./build/index.js" type="module"></script>
+  </body>
+</html>
