@@ -25,3 +25,39 @@
 // }
 // ANY : can hold any type of value even UNKNOWN
 // let anyVar : any = unknownVar;
+// Union Type
+let userAge = 32;
+userAge = "Thirty-Two";
+// Tuple Type
+let users = ["Foo bar", 32, true];
+let foo = {
+    firstName: "FOO",
+    lastName: "BAR",
+    age: new Date("Dec 21, 1982")
+};
+// class Student {
+//     studId : string;
+//     studName : string;
+//     age : number;
+//     constructor(studId: string, studName : string, age : number) {
+//         this.studId = studId;
+//         this.studName = studName
+//         this.age = age;
+//     }
+// }
+class Student {
+    // Constructor Injection
+    constructor(studId, studName, age) {
+        this.studId = studId;
+        this.studName = studName;
+        this.age = age;
+    }
+    getDetails() {
+        return `${this.studId} - ${this.studName} || ${this.age}`;
+    }
+}
+let userA = new Student("S001", "Tanvi", 23);
+console.log(userA.getDetails());
+// private
+// public
+// protected
