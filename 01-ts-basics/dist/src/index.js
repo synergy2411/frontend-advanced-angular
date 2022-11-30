@@ -35,29 +35,33 @@ let foo = {
     lastName: "BAR",
     age: new Date("Dec 21, 1982")
 };
-// class Student {
-//     studId : string;
-//     studName : string;
-//     age : number;
-//     constructor(studId: string, studName : string, age : number) {
-//         this.studId = studId;
-//         this.studName = studName
-//         this.age = age;
-//     }
-// }
-class Student {
-    // Constructor Injection
-    constructor(studId, studName, age) {
-        this.studId = studId;
-        this.studName = studName;
-        this.age = age;
+class Server {
+    constructor(serverId, serverStatus) {
+        this.id = serverId;
+        this.status = serverStatus;
     }
-    getDetails() {
-        return `${this.studId} - ${this.studName} || ${this.age}`;
+    changeOil() {
+        return "Changing the oil...";
     }
 }
-let userA = new Student("S001", "Tanvi", 23);
-console.log(userA.getDetails());
-// private
-// public
-// protected
+let serverA = new Server(1001, "running");
+console.log(serverA.changeOil());
+// ABSTRACT CLASSES
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+    display() {
+        console.log("Name : ", this.name);
+    }
+}
+class Employee extends Person {
+    constructor(empName) {
+        super(empName);
+    }
+    find(name) {
+        return "Finding the person";
+    }
+}
+let userA = new Employee("USER-A");
+userA.display();

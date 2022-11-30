@@ -52,12 +52,10 @@ let userAge: string | number = 32;
 userAge = "Thirty-Two";
 
 // Tuple Type
-
 let users: [string, number, boolean] = ["Foo bar", 32, true];
 // console.log(users);
 
 // Structural Type / Custom Type
-
 type User = {
     firstName: string,
     lastName: string,
@@ -71,9 +69,9 @@ let foo: User = {
 }
 
 // class Student {
-//     studId : string;
-//     studName : string;
-//     age : number;
+//     private studId : string;
+//     private studName : string;
+//     private age : number;
 
 //     constructor(studId: string, studName : string, age : number) {
 //         this.studId = studId;
@@ -82,20 +80,168 @@ let foo: User = {
 //     }
 // }
 
-class Student {
+// let userB = new Student("S002", "Ragamayi", 23);
 
-    // Constructor Injection
-    constructor(public studId: string, private studName: string, private age: number) { }
 
-    getDetails() {
-        return `${this.studId} - ${this.studName} || ${this.age}`
-    }
-}
+// class Student {
 
-let userA = new Student("S001", "Tanvi", 23);
-console.log(userA.getDetails())
+//     // Constructor Injection
+//     constructor(public studId: string, private studName: string, private age: number) { }
+
+//     public getDetails() : string {
+//         return `${this.studId} - ${this.studName} || ${this.age}`
+//     }
+// }
+
+// let userA = new Student("S001", "Tanvi", 23);
+// console.log(userA.getDetails())
 
 
 // private
 // public
 // protected
+
+
+// enum COLORS {
+//     RED,
+//     BLUE,
+//     GREEN
+// }
+
+// let favColor : COLORS = COLORS.BLUE
+
+
+// class A {}
+// class B{}
+
+// class C {
+//     constructor(a : A, b : B){}
+// }
+
+// let a = new A();
+// let b = new B();
+
+// let c = new C(a, b)
+
+
+
+
+// STATIC : 
+// - static members can only be called via class name
+// - static members holds their value for each class instance/object
+
+// class Animal {
+//     static numOfAnimals: number = 0;
+//     breed: string;
+//     constructor(breed: string) {
+//         this.breed = breed;
+//         Animal.numOfAnimals++;
+//     }
+//     static getNumberOfAnimal(): number {
+//         return Animal.numOfAnimals;
+//     }
+// }
+
+// let rabbit = new Animal("Rabbit");
+// console.log(rabbit.breed)
+// console.log(Animal.numOfAnimals);           // 1
+
+// let cat = new Animal("Tiger");
+// console.log(cat.breed);
+// console.log(Animal.numOfAnimals);           // 2
+
+// console.log(Animal.getNumberOfAnimal());
+
+
+
+// GETTER & SETTER - ENCAPSULATION
+// class Ninja {
+//     private _isBlackBelt: boolean = false;
+
+//     get isBlackBelt() {
+//         return this._isBlackBelt;
+//     }
+//     set isBlackBelt(value: boolean) {
+//         this._isBlackBelt = value;
+//     }
+// }
+
+// let tod = new Ninja();
+// // ABSTRACTION
+// console.log(tod.isBlackBelt)
+
+// tod.isBlackBelt = true;
+// console.log(tod.isBlackBelt)
+
+
+
+
+// Method Overloading - 3 signatures
+// - Type of parameters
+// - Number of parameters
+// - Return type
+
+// function add(a: number, b?: number): number;
+// function add(a: string, b?: string): string;
+// function add(a: any, b?: any): any {
+//     if (b) {
+//         return a + b;
+//     }
+//     return a + a
+// }
+// console.log(add(10))
+// console.log(add(10, 20));
+// console.log(add("Hello"));
+// console.log(add("Hello", "World"));
+
+
+
+// INTERFACE
+// - blueprint of class
+// - declare the methods
+// - full abstraction
+
+interface Resource {
+    id: number;
+    status: string;
+    changeOil(): string;
+}
+
+class Server implements Resource {
+    id: number;
+    status: string;
+    constructor(serverId: number, serverStatus: string) {
+        this.id = serverId;
+        this.status = serverStatus;
+    }
+    changeOil(): string {
+        return "Changing the oil..."
+    }
+}
+
+let serverA: Resource = new Server(1001, "running");
+console.log(serverA.changeOil())
+
+// ABSTRACT CLASSES
+abstract class Person {
+    private name: string;
+    constructor(name: string) {
+        this.name = name;
+    }
+    display(): void {
+        console.log("Name : ", this.name)
+    }
+
+    abstract find(name: string): string;
+}
+
+class Employee extends Person {
+    constructor(empName: string) {
+        super(empName)
+    }
+    find(name: string): string {
+        return "Finding the person"
+    }
+}
+let userA: Person = new Employee("USER-A")
+userA.display()
