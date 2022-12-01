@@ -82,3 +82,6 @@ onmouseleave( @Optional() name : string){}
 
 - ng generate component components/user-list
 - ng g c components/user-list
+
+- ng g c components/nested/parent
+- ng g c components/nested/child

@@ -1,0 +1,21 @@
+<div class="container">
+  <h2 class="text-center">My Awesome User List</h2>
+
+  <ul class="list-group">
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col-3">
+          <!-- user-img -->
+          <app-user-img
+            [user]="user"
+            (childEvent)="moreInfo($event)"
+          ></app-user-img>
+        </div>
+        <div class="col-9">
+          <!-- user-info -->
+          <app-user-info [user]="user"></app-user-info>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

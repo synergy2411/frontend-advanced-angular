@@ -1,0 +1,8 @@
+<p>parent works!</p>
+<h2>Value coming from Child : {{theValue}}</h2>
+<app-child
+  [xyz]="title"
+  [email]="userEmail"
+  (childEvent)="parentFunc($event)"
+  (btnClickEvent)="parentClick($event)"
+></app-child>

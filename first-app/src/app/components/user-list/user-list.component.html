@@ -1,29 +1,20 @@
 <div class="container">
-  <h2 class="text-center">My Awesome User List</h2>
-
+  <h2 class="text-center">My User List</h2>
+  <!-- <p>Username : {{ username }}</p>
+<p>User Email : {{ user.email }}</p>
+<!-- Property binding syntax -->
+  <!-- <p>User Age : <span [innerText]="user.age"></span></p>   -->
   <ul class="list-group">
     <li class="list-group-item">
       <div class="row">
         <div class="col-3">
-          <img
-            [src]="user.image"
-            alt="bill gates image"
-            class="img-fluid rounded-circle"
-          />
-          <div class="d-grid m-2">
-            <button class="btn btn-info btn-sm" (click)="moreInfo(user)">
-              More Info
-            </button>
-          </div>
+          <!--User-img-->
+          <app-user-img [user]="user" (childEvent)="moreInfo($event)"></app-user-img>
         </div>
+
         <div class="col-9">
-          <h2>{{ user.firstName }} {{ user.lastName }}</h2>
-          <p>Date of Birth : <span [innerText]="user.dob"></span></p>
-          <p>Income : <span [innerHTML]="user.income"></span></p>
-          <p>
-            Total Votes : {{ user.votes }}
-            <input type="number" [(ngModel)]="user.votes" />
-          </p>
+          <!--user-info-->
+          <app-user-info [user]="user"></app-user-info>
         </div>
       </div>
     </li>

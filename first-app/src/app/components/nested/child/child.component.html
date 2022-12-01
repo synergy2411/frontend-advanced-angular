@@ -1,0 +1,12 @@
+<div class="container">
+  <p>child works!</p>
+  <h5>ABC : {{ abc }}</h5>
+  <h5>Email : {{ email }}</h5>
+
+  <label for="value">Enter some Value</label>
+  <input type="text" (keyup)="onKeyUp(txtField.value)" #txtField />
+  <br />
+  <button class="btn btn-primary" (click)="onBtnClick()">
+    Button on Child
+  </button>
+</div>
