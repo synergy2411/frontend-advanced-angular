@@ -15,8 +15,8 @@
 - Solid : based on React concepts
 - Preact (5kb) : based on React Concepts
 - _Angular (2011) : SPA, State Management, Templates, Components, MV_, 2 way data binding, DOM manipulation, XHR Calls, Shadow DOM, Google Team etc
-  > v1.x - Library
-  > v2.x onwards - Framework
+  > v1.x - Library (2011 - 2014) - AngularJS
+  > v2.x onwards - Framework (2014 onwards) - Angular
   > 3 Languages - JavaScript, TypeScript, DART
 - \*Ember (2010) : frequent changes in API
 
@@ -71,4 +71,14 @@ onmouseleave( @Optional() name : string){}
 - import
 - export
 
- <script src="" type="module">
+ <!-- <script src="" type="module"> -->
+
+# npx create-react-app <project-name>
+
+# Angular Boilerplate Project
+
+- npm i @angular/cli -g
+- ng new <project-name>
+
+- ng generate component components/user-list
+- ng g c components/user-list
