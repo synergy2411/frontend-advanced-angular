@@ -1,4 +1,6 @@
-export const USER_DATA = {
+import { IUser } from "./user.interface";
+
+export const USER_DATA: IUser = {
   firstName: 'Bill',
   lastName: 'Gates',
   dob: new Date('Dec 18, 1987'),
