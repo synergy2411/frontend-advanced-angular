@@ -1,4 +1,8 @@
 <!-- <h1>Hello</h1> -->
 <!-- <app-user-list></app-user-list> -->
 <!-- <app-parent></app-parent> -->
-<app-todo></app-todo>
+<!-- <app-todo></app-todo> -->
+
+<button (click)="onToggle()">Toggle</button>
+
+<app-life-cycle-demo [title]="title" *ngIf="show"></app-life-cycle-demo>

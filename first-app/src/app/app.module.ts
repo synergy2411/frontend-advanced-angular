@@ -10,9 +10,10 @@ import { UserInfoComponent } from './components/user-list/user-info/user-info.co
 // import { TodoComponent } from './component/todo/todo.component';
 import { TodoActionComponent } from './components/todo/todo-action/todo-action.component';
 import { TodoComponent } from './components/todo/todo.component';
+import { LifeCycleDemoComponent } from './components/life-cycle-demo/life-cycle-demo.component';
 
 @NgModule({
-  declarations: [AppComponent, UserListComponent, ParentComponent, ChildComponent, UserImgComponent, UserInfoComponent, TodoComponent, TodoActionComponent],
+  declarations: [AppComponent, UserListComponent, ParentComponent, ChildComponent, UserImgComponent, UserInfoComponent, TodoComponent, TodoActionComponent, LifeCycleDemoComponent],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'first-app';
+
+  show: boolean = true;
+
+  onToggle() {
+    this.show = !this.show;
+  }
 }
