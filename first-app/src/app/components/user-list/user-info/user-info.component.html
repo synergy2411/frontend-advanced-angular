@@ -1,7 +1,13 @@
 <h2>{{ user.firstName }} {{ user.lastName }}</h2>
 <p>Date of Birth : <span [innerText]="user.dob"></span></p>
-<p>Income : <span [innerText]="user.income"></span></p>
+<p *ngIf="user.income !== 0; else xyz">
+  Income : <span [innerText]="user.income"></span>
+</p>
 <p>
   Total Votes : {{ user.votes }}
   <input type="number" [(ngModel)]="user.votes" />
 </p>
+
+<ng-template #xyz>
+  <p>Mr. {{ user.lastName }} is not working now!</p>
+</ng-template>

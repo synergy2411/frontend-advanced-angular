@@ -1,0 +1,14 @@
+<div class="col-12">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" (click)="tab = 1">Show Comments</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="tab = 2">Add Comment</a>
+    </li>
+  </ul>
+</div>
+<div class="col-12 m-1" [ngSwitch]="tab">
+  <div *ngSwitchCase="1">Show all comment</div>
+  <div *ngSwitchCase="2">Comment form coming soon</div>
+</div>
