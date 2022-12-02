@@ -8,10 +8,10 @@ import { IUser } from 'src/app/model/user.interface';
   styleUrls: ['./user-list.component.css'],
 })
 export class UserListComponent implements OnInit {
-  user: IUser | undefined;
+  users: Array<IUser> | undefined;
 
   ngOnInit() {
-    this.user = USER_DATA
+    this.users = USER_DATA
   }
 
 

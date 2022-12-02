@@ -1,19 +1,17 @@
 <div class="container">
   <h2 class="text-center">My User List</h2>
-  <!-- <p>Username : {{ username }}</p>
-<p>User Email : {{ user.email }}</p>
-<!-- Property binding syntax -->
-  <!-- <p>User Age : <span [innerText]="user.age"></span></p>   -->
+
   <ul class="list-group">
-    <li class="list-group-item">
+    <li class="list-group-item my-2" *ngFor="let user of users">
       <div class="row">
         <div class="col-3">
-          <!--User-img-->
-          <app-user-img [user]="user" (childEvent)="moreInfo($event)"></app-user-img>
+          <app-user-img
+            [user]="user"
+            (childEvent)="moreInfo($event)"
+          ></app-user-img>
         </div>
 
         <div class="col-9">
-          <!--user-info-->
           <app-user-info [user]="user"></app-user-info>
         </div>
       </div>
