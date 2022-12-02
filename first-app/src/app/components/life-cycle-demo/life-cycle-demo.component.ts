@@ -11,9 +11,16 @@ export class LifeCycleDemoComponent implements
 
   @Input("title") title: string = '';
 
+  username: string = '';
+
+  constructor() {
+    console.log("constructor");
+    console.log("Username : ", this.username);        // ?
+  }
 
   ngOnInit(): void {
     console.log("ngOnInit");
+    this.username = "Foo Bar"
   }
   ngDoCheck(): void {
     console.log("ngDoCheck");
@@ -26,6 +33,7 @@ export class LifeCycleDemoComponent implements
   }
   ngAfterViewInit(): void {
     console.log("ngAfterViewInit");
+    console.log("AFTER VIEW INIT : ", this.username);       // ?
   }
   ngAfterViewChecked(): void {
     console.log("ngAfterViewChecked");
