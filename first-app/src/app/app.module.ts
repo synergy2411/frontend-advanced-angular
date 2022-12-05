@@ -18,9 +18,10 @@ import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
 import { CountryCodePipe } from './pipes/country-code.pipe';
 import { SortPipe } from './pipes/sort.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { CommentFormComponent } from './components/user-list/comment-form/comment-form.component';
 
 @NgModule({
-  declarations: [AppComponent, UserListComponent, ParentComponent, ChildComponent, UserImgComponent, UserInfoComponent, TodoComponent, TodoActionComponent, LifeCycleDemoComponent, UserCommentComponent, AppHighlightDirective, BetterHighlightDirective, PipeDemoComponent, CountryCodePipe, SortPipe, FilterPipe],
+  declarations: [AppComponent, UserListComponent, ParentComponent, ChildComponent, UserImgComponent, UserInfoComponent, TodoComponent, TodoActionComponent, LifeCycleDemoComponent, UserCommentComponent, AppHighlightDirective, BetterHighlightDirective, PipeDemoComponent, CountryCodePipe, SortPipe, FilterPipe, CommentFormComponent],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
