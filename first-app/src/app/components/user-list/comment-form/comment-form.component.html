@@ -42,7 +42,13 @@
           <!-- buttons -->
           <div class="form-group my-2">
             <div class="d-grid">
-              <button type="submit" class="btn btn-secondary">Add</button>
+              <button
+                [disabled]="!myForm.valid"
+                type="submit"
+                class="btn btn-secondary"
+              >
+                Add
+              </button>
             </div>
           </div>
         </form>

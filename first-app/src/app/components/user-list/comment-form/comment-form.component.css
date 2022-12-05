@@ -1,0 +1,31 @@
+.ng-dirty.ng-invalid {
+  border-bottom: 5px solid rgb(245, 120, 75);
+}
+
+.ng-dirty.ng-valid {
+  border-bottom: 5px solid rgb(109, 239, 109);
+}
+
+/* .ng-dirty.ng-invalid[name="body"] {
+  border-bottom: 5px solid rgb(245, 120, 75);
+}
+
+.ng-dirty.ng-valid[name="body"] {
+  border-bottom: 5px solid rgb(109, 239, 109);
+}
+
+.ng-dirty.ng-invalid[name="author"] {
+  border-bottom: 5px solid rgb(245, 120, 75);
+}
+
+.ng-dirty.ng-valid[name="author"] {
+  border-bottom: 5px solid rgb(109, 239, 109);
+}
+
+.ng-dirty.ng-invalid[name="stars"] {
+  border-bottom: 5px solid rgb(245, 120, 75);
+}
+
+.ng-dirty.ng-valid[name="stars"] {
+  border-bottom: 5px solid rgb(109, 239, 109);
+} */
