@@ -2,11 +2,11 @@
   <div class="col-6 offset-3">
     <div class="card">
       <div class="card-body">
-        <form>
+        <form (submit)="onFormSubmit(myForm)" #myForm="ngForm">
           <!-- stars -->
           <div class="form-group">
             <label for="stars">Stars :</label>
-            <select class="form-control my-2">
+            <select class="form-control my-2" ngModel name="stars" required>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -16,17 +16,33 @@
           </div>
           <!-- body -->
           <div class="formm-group my-2">
-            <textarea class="form-control" cols="30" rows="10"></textarea>
+            <textarea
+              class="form-control"
+              cols="30"
+              rows="8"
+              placeholder="your message here..."
+              ngModel
+              name="body"
+              required
+              minlength="10"
+            ></textarea>
           </div>
           <!-- author -->
           <div class="form-group my-2">
             <label for="email">Email :</label>
-            <input type="email" class="form-control" />
+            <input
+              type="email"
+              class="form-control"
+              ngModel
+              name="author"
+              required
+              email
+            />
           </div>
           <!-- buttons -->
           <div class="form-group my-2">
             <div class="d-grid">
-              <button class="btn btn-secondary">Add</button>
+              <button type="submit" class="btn btn-secondary">Add</button>
             </div>
           </div>
         </form>

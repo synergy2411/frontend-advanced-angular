@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-comment-form',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class CommentFormComponent {
 
+  onFormSubmit(form: NgForm) {
+    const { stars, body, author } = form.value;
+    console.log(stars, body, author);
+  }
 }
