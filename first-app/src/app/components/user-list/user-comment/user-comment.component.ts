@@ -11,4 +11,9 @@ export class UserCommentComponent {
   comments: Array<IComment> | undefined;
 
   tab = 1;
+
+  myStyle = {
+    border: '2px grey dotted',
+    'box-shadow': 'inset 0 0 25px 10px rgba(0,0,0,0.5)'
+  }
 }

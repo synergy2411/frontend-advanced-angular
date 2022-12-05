@@ -22,10 +22,7 @@ export const USER_DATA: Array<IUser> = [{
   image:
     'https://thumbs.dreamstime.com/b/steve-jobs-portrait-illustration-manually-painted-capturing-apple-genius-56617906.jpg',
   votes: 190,
-  comments: [
-    { stars: 5, author: "abc@test", body: "Love your work" },
-    { stars: 5, author: "xyz@test", body: "Great Work" },
-  ]
+  comments: []
 }, {
   firstName: 'Elon',
   lastName: 'musk',

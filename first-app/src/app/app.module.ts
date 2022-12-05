@@ -12,9 +12,10 @@ import { TodoActionComponent } from './components/todo/todo-action/todo-action.c
 import { TodoComponent } from './components/todo/todo.component';
 import { LifeCycleDemoComponent } from './components/life-cycle-demo/life-cycle-demo.component';
 import { UserCommentComponent } from './components/user-list/user-comment/user-comment.component';
+import { AppHighlightDirective } from './directives/app-highlight.directive';
 
 @NgModule({
-  declarations: [AppComponent, UserListComponent, ParentComponent, ChildComponent, UserImgComponent, UserInfoComponent, TodoComponent, TodoActionComponent, LifeCycleDemoComponent, UserCommentComponent],
+  declarations: [AppComponent, UserListComponent, ParentComponent, ChildComponent, UserImgComponent, UserInfoComponent, TodoComponent, TodoActionComponent, LifeCycleDemoComponent, UserCommentComponent, AppHighlightDirective],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
