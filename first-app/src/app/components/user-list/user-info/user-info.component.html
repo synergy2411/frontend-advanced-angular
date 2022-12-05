@@ -1,7 +1,11 @@
-<h2 appBetterHighlight>{{ user.firstName }} {{ user.lastName }}</h2>
-<p>Date of Birth : <span [innerText]="user.dob"></span></p>
+<h2 appBetterHighlight>
+  {{ user.firstName | titlecase }} {{ user.lastName | titlecase }}
+</h2>
+<p>
+  Date of Birth : <span [innerText]="user.dob | date : 'dd-MM-yyyy'"></span>
+</p>
 <p *ngIf="user.income !== 0; else xyz">
-  Income : <span [innerText]="user.income"></span>
+  Income : <span [innerText]="user.income | currency : 'INR'"></span>
 </p>
 <p>
   Total Votes : {{ user.votes }}

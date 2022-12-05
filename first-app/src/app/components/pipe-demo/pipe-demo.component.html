@@ -1,0 +1,12 @@
+<div class="container">
+  <h3>Promise Data : {{ promiseObj | async }}</h3>
+  <h4>Contact Number : {{ contactNumber | countryCode }}</h4>
+
+  <input type="text" [(ngModel)]="filteredFruits" />
+
+  <ul>
+    <li *ngFor="let fruit of fruits | sort : false | filter : filteredFruits">
+      {{ fruit }}
+    </li>
+  </ul>
+</div>

@@ -14,9 +14,13 @@ import { LifeCycleDemoComponent } from './components/life-cycle-demo/life-cycle-
 import { UserCommentComponent } from './components/user-list/user-comment/user-comment.component';
 import { AppHighlightDirective } from './directives/app-highlight.directive';
 import { BetterHighlightDirective } from './directives/better-highlight.directive';
+import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
+import { CountryCodePipe } from './pipes/country-code.pipe';
+import { SortPipe } from './pipes/sort.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
-  declarations: [AppComponent, UserListComponent, ParentComponent, ChildComponent, UserImgComponent, UserInfoComponent, TodoComponent, TodoActionComponent, LifeCycleDemoComponent, UserCommentComponent, AppHighlightDirective, BetterHighlightDirective],
+  declarations: [AppComponent, UserListComponent, ParentComponent, ChildComponent, UserImgComponent, UserInfoComponent, TodoComponent, TodoActionComponent, LifeCycleDemoComponent, UserCommentComponent, AppHighlightDirective, BetterHighlightDirective, PipeDemoComponent, CountryCodePipe, SortPipe, FilterPipe],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
