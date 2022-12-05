@@ -8,8 +8,9 @@ export class AppHighlightDirective {
   constructor(private elRef: ElementRef) {
     // console.log(this.elRef);
     this.elRef.nativeElement.style.backgroundColor = '#45ff45';
-    this.elRef.nativeElement.style.fontSize = '1.8em';
     this.elRef.nativeElement.style.color = '#444';
+    this.elRef.nativeElement.style.boxShadow = '0 0 25px 10px rgba(0,0,0,.5)';
+    this.elRef.nativeElement.style.marginTop = '30px';
   }
 
 }
@@ -30,3 +31,6 @@ export class AppHighlightDirective {
 // }
 
 // .txtInput{}
+
+
+// ng g d directives/highlight

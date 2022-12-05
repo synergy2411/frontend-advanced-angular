@@ -13,9 +13,10 @@ import { TodoComponent } from './components/todo/todo.component';
 import { LifeCycleDemoComponent } from './components/life-cycle-demo/life-cycle-demo.component';
 import { UserCommentComponent } from './components/user-list/user-comment/user-comment.component';
 import { AppHighlightDirective } from './directives/app-highlight.directive';
+import { BetterHighlightDirective } from './directives/better-highlight.directive';
 
 @NgModule({
-  declarations: [AppComponent, UserListComponent, ParentComponent, ChildComponent, UserImgComponent, UserInfoComponent, TodoComponent, TodoActionComponent, LifeCycleDemoComponent, UserCommentComponent, AppHighlightDirective],
+  declarations: [AppComponent, UserListComponent, ParentComponent, ChildComponent, UserImgComponent, UserInfoComponent, TodoComponent, TodoActionComponent, LifeCycleDemoComponent, UserCommentComponent, AppHighlightDirective, BetterHighlightDirective],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
