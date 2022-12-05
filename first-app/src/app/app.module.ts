@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { ParentComponent } from './components/nested/parent/parent.component';
@@ -19,11 +20,12 @@ import { CountryCodePipe } from './pipes/country-code.pipe';
 import { SortPipe } from './pipes/sort.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { CommentFormComponent } from './components/user-list/comment-form/comment-form.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, UserListComponent, ParentComponent, ChildComponent, UserImgComponent, UserInfoComponent, TodoComponent, TodoActionComponent, LifeCycleDemoComponent, UserCommentComponent, AppHighlightDirective, BetterHighlightDirective, PipeDemoComponent, CountryCodePipe, SortPipe, FilterPipe, CommentFormComponent],
-  imports: [BrowserModule, FormsModule],
+  declarations: [AppComponent, UserListComponent, ParentComponent, ChildComponent, UserImgComponent, UserInfoComponent, TodoComponent, TodoActionComponent, LifeCycleDemoComponent, UserCommentComponent, AppHighlightDirective, BetterHighlightDirective, PipeDemoComponent, CountryCodePipe, SortPipe, FilterPipe, CommentFormComponent, LoginComponent],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
