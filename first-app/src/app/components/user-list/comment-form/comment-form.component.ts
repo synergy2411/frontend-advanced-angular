@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { IComment } from 'src/app/model/comment.interface';
 
 @Component({
   selector: 'app-comment-form',
@@ -8,8 +9,13 @@ import { NgForm } from '@angular/forms';
 })
 export class CommentFormComponent {
 
+  @Output() childEvent = new EventEmitter<IComment>()
+
   onFormSubmit(form: NgForm) {
     const { stars, body, author } = form.value;
-    console.log(stars, body, author);
+    let newComment: IComment = {
+      author, body, stars
+    }
+    this.childEvent.emit(newComment);
   }
 }

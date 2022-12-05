@@ -5,7 +5,7 @@
         <form (submit)="onFormSubmit(myForm)" #myForm="ngForm">
           <!-- stars -->
           <div class="form-group">
-            <label for="stars">Stars :</label>
+            <label for="stars"><strong>Stars :</strong></label>
             <select class="form-control my-2" ngModel name="stars" required>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -29,7 +29,7 @@
           </div>
           <!-- author -->
           <div class="form-group my-2">
-            <label for="email">Email :</label>
+            <label for="email"><strong>Email :</strong></label>
             <input
               type="email"
               class="form-control"

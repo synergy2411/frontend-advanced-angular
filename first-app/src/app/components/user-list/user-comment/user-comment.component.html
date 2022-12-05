@@ -28,7 +28,9 @@
       </blockquote>
     </div>
     <div *ngSwitchCase="2">
-      <app-comment-form></app-comment-form>
+      <app-comment-form
+        (childEvent)="onAddNewComment($event)"
+      ></app-comment-form>
     </div>
   </div>
 </div>

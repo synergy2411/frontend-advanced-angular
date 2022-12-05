@@ -16,4 +16,9 @@ export class UserCommentComponent {
     border: '2px grey dotted',
     'box-shadow': 'inset 0 0 25px 10px rgba(0,0,0,0.5)'
   }
+
+  onAddNewComment(comment: IComment) {
+    this.comments?.push(comment);
+    this.tab = 1;
+  }
 }
