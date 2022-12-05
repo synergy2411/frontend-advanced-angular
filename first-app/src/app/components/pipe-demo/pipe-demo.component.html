@@ -4,8 +4,19 @@
 
   <input type="text" [(ngModel)]="filteredFruits" />
 
+  <select [(ngModel)]="sortOrder">
+    <option value="asc">Ascending</option>
+    <option value="desc">Decending</option>
+  </select>
+
   <ul>
-    <li *ngFor="let fruit of fruits | sort : false | filter : filteredFruits">
+    <li
+      *ngFor="
+        let fruit of fruits
+          | sort : sortOrder === 'asc'
+          | filter : filteredFruits
+      "
+    >
       {{ fruit }}
     </li>
   </ul>

@@ -19,4 +19,6 @@ export class PipeDemoComponent {
 
   filteredFruits: string = '';
 
+  sortOrder: string = 'asc'
+
 }

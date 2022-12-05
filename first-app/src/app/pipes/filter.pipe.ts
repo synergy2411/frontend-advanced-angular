@@ -6,7 +6,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterPipe implements PipeTransform {
 
   transform(fruits: Array<string>, filteredFruits: string): Array<string> {
-    return fruits.filter(fruit => fruit.includes(filteredFruits));
+    if (filteredFruits === '') {
+      return fruits
+    } else {
+      return fruits.filter(fruit => fruit.includes(filteredFruits));
+    }
   }
 
 }
