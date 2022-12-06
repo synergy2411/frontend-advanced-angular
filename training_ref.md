@@ -85,3 +85,122 @@ onmouseleave( @Optional() name : string){}
 
 - ng g c components/nested/parent
 - ng g c components/nested/child
+
+## Data Projection / Content Projection
+
+- <ng-content> : can display the projected data in child
+
+## Component Types
+
+- Smart / Container / Parent Components
+
+  > they contain business logic / Model / Data
+  > they contain other component
+
+- Dumb / Presentaional / Child Components
+
+  > they don't have associated model; receive the model from parent component
+  > Receive data from parent to create the UI
+
+## Steps for creating Comments-
+
+- Create IComment Interface
+- Create "comments" property type in IUser interface
+- Make some comments in mocks.ts file for each user
+- supply the "user.comments" to user-comment component
+- use "\*ngFor" to display all comments in user-comment component template
+
+## Life Cycle methods -
+
+1. \*ngOnChanges : Whenever @Input() property changes
+2. \*ngOnInit : When component intialize
+3. \*\*ngDoCheck : when data / model changes
+4. \*ngAfterContentInit : after component receive content from parent <ng-content> (Data/Content Projection)
+5. \*\*ngAfterContentChecked : after the received ng-content
+6. \*ngAfterViewInit : When the view is initialized
+7. \*\*ngAfterViewChecked : after the vieew is ready to load
+8. \*ngOnDestroy : When the component is about to destroy
+
+- - fires only once
+    \*\* - fires everytime whenever the model changes
+
+# Directive : special markups, 3 types -
+
+- Component
+- Structural : change the DOM Layout. eg. *ngFor, *ngIf, \*ngSwitch
+- Attribute : change the appearance of template. eg. ngStyle, ngClass
+
+- @HostListener("event") : listens to any event on the host element
+- @HostBinding("property) : Bind the host element attribute to the property available in Class.
+
+# Pure Change : Changes in the primitive value
+
+let xyz = "Hello"
+
+# Impure Change : Change in Reference / Object Value
+
+let user = { name : "Foo" };
+user.name = "Bar"
+
+user = { // Pure Change
+name : "Bam"
+}
+
+let fruits = ["", "", ""];
+
+fruits.push("") // impure change
+
+fruits = ["", "", "", ""] // Pure Change
+
+# FORMS
+
+- TEMPLATE DRIVEN : validation logic inside the template eg. required, email, minlength
+- REACTIVE / MODEL DRIVEN :
+
+# Form and Form Control States/Classes
+
+> valid / invalid
+> touched / untouched
+> dirty / pristine
+
+# Directives
+
+- Attributes Directive - ngClass, ngStyle
+- Custom Directive : ng g d <path>
+- ElementRef -> Access the reference of native DOM Element
+- @HostListener() : Listens to event occured on the host element:
+- @HostBinding() : Binds the host element attribute to the Class property
+
+# Pipe : Formatting the data on the UI
+
+# Forms :
+
+- Template driven
+- Model Driven / Reactive Forms
+
+# Service :
+
+- implements DI Concept
+- Injectable blocks/classes
+
+UserListComp -> DataService -> Mocks.ts
+
+# Observables - stream on which data flow at different time interval
+
+- series of data
+- Are cancelable
+- Can be both Async / Sync
+- various methods to work on data
+- .subscribe(dataHandlerFn, errorHandlerFn, completeFn)
+- Lazily executed : Don't execute until subscribe
+- Keeps an eye on DataSource / Observe the DataSource
+- RxJS Library - reactivex.io
+- Powerful Operators support
+
+# Promise
+
+- handles data in one shot
+- resolve / reject. Can't stop the execution in between
+- Always Async
+- .then((response)=>{}) / Async...await
+- Eagerly executed -

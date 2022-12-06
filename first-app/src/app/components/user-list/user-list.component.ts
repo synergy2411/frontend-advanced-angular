@@ -7,6 +7,7 @@ import { DataService } from 'src/app/services/data.service';
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css'],
+  // providers : [DataService]
 })
 export class UserListComponent implements OnInit {
   users: Array<IUser> | undefined;
