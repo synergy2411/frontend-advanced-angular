@@ -30,7 +30,27 @@ import { LoggerInterceptor } from './services/interceptors/logger.interceptor';
 import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
-  declarations: [AppComponent, UserListComponent, ParentComponent, ChildComponent, UserImgComponent, UserInfoComponent, TodoComponent, TodoActionComponent, LifeCycleDemoComponent, UserCommentComponent, AppHighlightDirective, BetterHighlightDirective, PipeDemoComponent, CountryCodePipe, SortPipe, FilterPipe, CommentFormComponent, LoginComponent, ObservableDemoComponent, HeaderComponent],
+  declarations: [
+    AppComponent,
+    UserListComponent,
+    ParentComponent,
+    ChildComponent,
+    UserImgComponent,
+    UserInfoComponent,
+    TodoComponent,
+    TodoActionComponent,
+    LifeCycleDemoComponent,
+    UserCommentComponent,
+    AppHighlightDirective,
+    BetterHighlightDirective,
+    PipeDemoComponent,
+    CountryCodePipe,
+    SortPipe,
+    FilterPipe,
+    CommentFormComponent,
+    LoginComponent,
+    ObservableDemoComponent,
+    HeaderComponent],
   imports: [
     BrowserModule,
     FormsModule,

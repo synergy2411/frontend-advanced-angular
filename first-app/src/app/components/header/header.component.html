@@ -1,5 +1,19 @@
-<ul class="nav nav-pills">
-  <li class="nav-item">
-    <a href="/login">Login</a>
-  </li>
-</ul>
+<div class="navbar-nav">
+  <ul class="nav nav-pills bg-light mb-2 px-2">
+    <li class="nav-item" *ngIf="!authService.isUserAuthenticated()">
+      <a class="nav-link" [routerLink]="['/login']">Login</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/users']">Users</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/observable-demo']">Observables</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/todos']">Todos</a>
+    </li>
+    <li class="nav-item" *ngIf="authService.isUserAuthenticated()">
+      <button class="btn btn-light" (click)="onLogout()">Logout</button>
+    </li>
+  </ul>
+</div>
