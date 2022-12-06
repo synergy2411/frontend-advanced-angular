@@ -22,6 +22,9 @@ export const APP_ROUTES: Routes = [
       { path: "overview/:productId/:prodName", component: OverviewComponent },
       { path: "specification", component: SpecificationComponent }
     ]
+  }, {
+    path: "employee",
+    loadChildren: () => import("./modules/employee/employee.module").then(m => m.EmployeeModule)
   },
   { path: "**", redirectTo: "/login", pathMatch: 'full' }                                // http://localhost:4200/doesnotexist
 ]
