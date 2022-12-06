@@ -11,6 +11,7 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getUserData(): Observable<IUser[]> {
+    // this.http.post("", {})
     return this.http.get<IUser[]>("http://localhost:3000/users")
   }
 

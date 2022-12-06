@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { UserListComponent } from './components/user-list/user-list.component';
@@ -24,12 +24,19 @@ import { CommentFormComponent } from './components/user-list/comment-form/commen
 import { LoginComponent } from './components/login/login.component';
 import { DataService } from './services/data.service';
 import { ObservableDemoComponent } from './components/observable-demo/observable-demo.component';
+import { LoggerInterceptor } from './services/interceptors/logger.interceptor';
 
 @NgModule({
   declarations: [AppComponent, UserListComponent, ParentComponent, ChildComponent, UserImgComponent, UserInfoComponent, TodoComponent, TodoActionComponent, LifeCycleDemoComponent, UserCommentComponent, AppHighlightDirective, BetterHighlightDirective, PipeDemoComponent, CountryCodePipe, SortPipe, FilterPipe, CommentFormComponent, LoginComponent, ObservableDemoComponent],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   // providers: [DataService],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoggerInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
