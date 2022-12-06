@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-observable-demo',
@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ObservableDemoComponent {
 
+  unSub: Subscription | undefined;
 
   obs$ = new Observable((observer) => {
     setTimeout(() => observer.next("First Package"), 1000);
@@ -19,11 +20,17 @@ export class ObservableDemoComponent {
   })
 
   onSubscribe() {
-    this.obs$.subscribe({
-      next: (data) => { console.log("DATA : ", data) },
-      error: (err) => { console.log("ERROR :", err); },
-      complete: () => console.log("COMPLETED")
-    })
+    // this.obs$.subscribe({
+    //   next: (data) => { console.log("DATA : ", data) },     // data handler
+    //   error: (err) => { console.log("ERROR :", err); },     // error handler
+    //   complete: () => console.log("COMPLETED")              // complete
+    // })
+
+    this.unSub = this.obs$.subscribe((data) => console.log(data))
+  }
+
+  onUnsubscribe() {
+    this.unSub?.unsubscribe();
   }
 
 }
