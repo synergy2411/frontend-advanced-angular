@@ -13,13 +13,13 @@ export const APP_ROUTES: Routes = [
   {
     path: "users", component: UserListComponent,
     canActivate: [LoginGuard]
-  },            // http://localhost:4200/users
+  },
   { path: "observable-demo", component: ObservableDemoComponent },                       // http://localhost:4200/observable-demo
   { path: "todos", component: TodoComponent },                                           // http://localhost:4200/todos
   {
     path: "product", component: ProductComponent,
     children: [
-      { path: "overview", component: OverviewComponent },
+      { path: "overview/:productId/:prodName", component: OverviewComponent },
       { path: "specification", component: SpecificationComponent }
     ]
   },
