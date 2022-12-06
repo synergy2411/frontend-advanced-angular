@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
-import { USER_DATA } from '../model/mocks';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { IUser } from '../model/user.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getUserData() {
-    return USER_DATA
+  getUserData(): Observable<IUser[]> {
+    return this.http.get<IUser[]>("http://localhost:3000/users")
   }
 
 }

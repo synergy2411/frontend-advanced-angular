@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { USER_DATA } from 'src/app/model/mocks';
 import { IUser } from 'src/app/model/user.interface';
 import { DataService } from 'src/app/services/data.service';
 
@@ -15,8 +14,8 @@ export class UserListComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    // this.users = USER_DATA
-    this.users = this.dataService.getUserData()
+    this.dataService.getUserData()
+      .subscribe((userdata) => this.users = userdata)
   }
 
 

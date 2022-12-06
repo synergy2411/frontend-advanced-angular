@@ -25,7 +25,6 @@ export class ObservableDemoComponent {
     //   error: (err) => { console.log("ERROR :", err); },     // error handler
     //   complete: () => console.log("COMPLETED")              // complete
     // })
-
     this.unSub = this.obs$.subscribe((data) => console.log(data))
   }
 
