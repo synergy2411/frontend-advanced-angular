@@ -28,6 +28,9 @@ import { DataService } from './services/data.service';
 import { ObservableDemoComponent } from './components/observable-demo/observable-demo.component';
 import { LoggerInterceptor } from './services/interceptors/logger.interceptor';
 import { HeaderComponent } from './components/header/header.component';
+import { ProductComponent } from './components/product/product.component';
+import { OverviewComponent } from './components/product/overview/overview.component';
+import { SpecificationComponent } from './components/product/specification/specification.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,10 @@ import { HeaderComponent } from './components/header/header.component';
     CommentFormComponent,
     LoginComponent,
     ObservableDemoComponent,
-    HeaderComponent],
+    HeaderComponent,
+    ProductComponent,
+    OverviewComponent,
+    SpecificationComponent],
   imports: [
     BrowserModule,
     FormsModule,

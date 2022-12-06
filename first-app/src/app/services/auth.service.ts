@@ -11,6 +11,7 @@ export class AuthService {
   isAuthenticated: boolean = false;
 
   onLogin(username: string, password: string) {
+    // Authentication has to be done on backend server
     localStorage.setItem("userinfo", JSON.stringify({ username, password }))
     this.isAuthenticated = true;
     this.router.navigate(["/users"])
