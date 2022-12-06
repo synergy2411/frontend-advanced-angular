@@ -5,7 +5,7 @@ import {
   HttpEvent,
   HttpInterceptor
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Injectable()
 export class LoggerInterceptor implements HttpInterceptor {
@@ -14,6 +14,7 @@ export class LoggerInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     console.log("[REQUEST]", request);
-    return next.handle(request);        // allows the request to reach to server
+    return next.handle(request)               // allows the request to reach to server
+      .pipe(tap(value => console.log("[RESPONSE]", value)));        // debugging the observables - 'tap' operator
   }
 }
